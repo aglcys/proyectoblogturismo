@@ -1,0 +1,18 @@
+{% extends "blog/index.html" %}
+{% load static %}
+{% block blog_content %}
+
+<h2>Registro</h2>
+<hr></hr>
+
+{% if form.errors %}
+<p style="color: red">Por favor, completa los campos correctamente.</p>
+{% endif %}
+
+<form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" class="btn btn-primary" value="Registrar usuario" />
+</form>
+
+{% endblock %}
